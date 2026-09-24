@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Corinthians — A História da Fiel</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root{
+    --black:#050505;
+    --black2:#0d0d0d;
+    --black3:#151515;
+    --white:#f5f5f5;
+    --gray:#999;
+    --gray2:#555;
+    --red:#c8102e;
+}
+
+
+/* =====================================================
+   FAIXAS CORINTHIANS
+===================================================== */
+
+.stripes{
+    height:7px;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        #050505 0px,
+        #050505 45px,
+        #ffffff 45px,
+        #ffffff 90px
+    );
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    height:78px;
+    position:fixed;
+    top:7px;
+    left:0;
+    width:100%;
+
+    background:rgba(3,3,3,.96);
+
+    border-bottom:1px solid #222;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    z-index:1000;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.brand img{
+    width:52px;
+    height:58px;
+    object-fit:contain;
+}
+
+.brand-name{
+    font-weight:1000;
+    font-size:19px;
+    letter-spacing:1px;
+}
+
+.brand-name small{
+    display:block;
+    font-size:8px;
+    color:#888;
+    letter-spacing:2px;
+    margin-top:3px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+    transition:.2s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#050505;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.98) 0%,
+        rgba(0,0,0,.9) 35%,
+        rgba(0,0,0,.45) 70%,
+        rgba(0,0,0,.8) 100%
+    ),
+    url("images/arena.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    filter:grayscale(100%);
+}
+
+.hero-stripes{
+    position:absolute;
+    right:-100px;
+    top:0;
+
+    width:45%;
+    height:100%;
+
+    opacity:.12;
+
+    background:
+    repeating-linear-gradient(
+        90deg,
+        white 0px,
+        white 55px,
+        transparent 55px,
+        transparent 110px
+    );
+
+    transform:skewX(-12deg);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    margin-left:8%;
+
+    max-width:760px;
+}
+
+.hero-crest{
+    width:110px;
+    margin-bottom:28px;
+
+    filter:
+    drop-shadow(0 15px 30px rgba(0,0,0,.8));
+}
+
+.hero-kicker{
+    color:#aaa;
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(55px,9vw,110px);
+
+    line-height:.82;
+
+    font-weight:1000;
+
+    letter-spacing:-5px;
+
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:#777;
+}
+
+.hero p{
+    max-width:650px;
+
+    color:#bbb;
+
+    line-height:1.7;
+
+    font-size:17px;
+
+    margin-top:28px;
+}
+
+.hero-button{
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:16px 25px;
+
+    background:white;
+    color:#050505;
+
+    text-decoration:none;
+
+    font-weight:1000;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.hero-button:hover{
+    background:#ddd;
+    transform:translateY(-3px);
+}
+
+
+/* =====================================================
+   SEÇÕES
+===================================================== */
+
+section{
+    padding:110px 7%;
+}
+
+.section-label{
+    color:#777;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:4px;
+}
+
+.section-title{
+    font-size:clamp(38px,6vw,70px);
+
+    font-weight:1000;
+
+    line-height:.9;
+
+    margin-top:12px;
+
+    text-transform:uppercase;
+}
+
+.section-title span{
+    color:#666;
+}
+
+
+/* =====================================================
+   HISTÓRIA
+===================================================== */
+
+.history{
+    background:#080808;
+}
+
+.history-intro{
+    max-width:1100px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    margin:60px auto 0;
+
+    align-items:center;
+}
+
+.history-text p{
+    color:#aaa;
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+}
+
+.history-photo{
+    height:430px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    border:1px solid #252525;
+}
+
+.history-photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:grayscale(100%);
+
+    transition:.6s;
+}
+
+.history-photo:hover img{
+    transform:scale(1.06);
+    filter:grayscale(0%);
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+    max-width:1000px;
+
+    margin:100px auto 0;
+
+    position:relative;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:25px;
+    top:0;
+    bottom:0;
+
+    width:2px;
+
+    background:#333;
+}
+
+.timeline-item{
+    position:relative;
+
+    padding-left:80px;
+
+    margin-bottom:70px;
+}
+
+.timeline-dot{
+    position:absolute;
+
+    left:16px;
+    top:3px;
+
+    width:20px;
+    height:20px;
+
+    border:4px solid #050505;
+
+    background:white;
+
+    border-radius:50%;
+
+    z-index:2;
+}
+
+.timeline-year{
+    font-size:50px;
+
+    font-weight:1000;
+
+    color:#fff;
+}
+
+.timeline-item h3{
+    font-size:28px;
+
+    margin:5px 0 12px;
+}
+
+.timeline-item p{
+    color:#888;
+
+    line-height:1.7;
+
+    max-width:700px;
+}
+
+
+/* =====================================================
+   MOMENTOS
+===================================================== */
+
+.moments{
+    background:#0c0c0c;
+
+    position:relative;
+}
+
+.moments::before{
+    content:"FIEL";
+
+    position:absolute;
+
+    right:-80px;
+    top:100px;
+
+    font-size:180px;
+
+    font-weight:1000;
+
+    color:rgba(255,255,255,.025);
+
+    transform:rotate(-90deg);
+}
+
+.moment-grid{
+    max-width:1250px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+}
+
+.moment{
+    height:450px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#111;
+
+    border:1px solid #222;
+}
+
+.moment.big{
+    height:600px;
+}
+
+.moment img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:grayscale(100%);
+
+    transition:.7s;
+}
+
+.moment:hover img{
+    transform:scale(1.07);
+
+    filter:grayscale(0%);
+}
+
+.moment::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.97),
+        rgba(0,0,0,.05) 75%
+    );
+}
+
+.moment-info{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:35px;
+
+    z-index:2;
+}
+
+.moment-year{
+    font-size:11px;
+
+    color:#aaa;
+
+    letter-spacing:4px;
+
+    font-weight:1000;
+}
+
+.moment-info h3{
+    font-size:38px;
+
+    font-weight:1000;
+
+    margin-top:8px;
+}
+
+.moment-info p{
+    color:#bbb;
+
+    margin-top:10px;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   MUNDIAIS
+===================================================== */
+
+.world{
+    background:#f2f2f2;
+
+    color:#050505;
+}
+
+.world .section-label{
+    color:#777;
+}
+
+.world .section-title span{
+    color:#999;
+}
+
+.world-grid{
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.world-card{
+    min-height:620px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+.world-card img{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:grayscale(100%);
+
+    transition:.7s;
+}
+
+.world-card:hover img{
+    transform:scale(1.06);
+
+    filter:grayscale(20%);
+}
+
+.world-card::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.98),
+        transparent 70%
+    );
+}
+
+.world-content{
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+    right:0;
+
+    padding:38px;
+
+    z-index:2;
+
+    color:white;
+}
+
+.world-year{
+    font-size:95px;
+
+    line-height:.75;
+
+    font-weight:1000;
+}
+
+.world-content h3{
+    font-size:30px;
+
+    margin-top:20px;
+}
+
+.world-content p{
+    color:#bbb;
+
+    line-height:1.6;
+
+    margin-top:10px;
+}
+
+
+/* =====================================================
+   LIBERTADORES
+===================================================== */
+
+.libertadores{
+    background:#050505;
+}
+
+.liberta-box{
+    max-width:1200px;
+
+    min-height:530px;
+
+    margin:60px auto 0;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.liberta-box img{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    filter:grayscale(100%);
+
+    opacity:.55;
+}
+
+.liberta-overlay{
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        #050505 5%,
+        rgba(5,5,5,.8) 45%,
+        rgba(5,5,5,.1)
+    );
+}
+
+.liberta-content{
+    position:relative;
+
+    z-index:2;
+
+    padding:75px;
+
+    max-width:700px;
+}
+
+.liberta-year{
+    font-size:100px;
+
+    line-height:.75;
+
+    font-weight:1000;
+}
+
+.liberta-content h3{
+    font-size:42px;
+
+    margin-top:25px;
+}
+
+.liberta-content p{
+    color:#aaa;
+
+    line-height:1.8;
+
+    margin-top:20px;
+}
+
+
+/* =====================================================
+   CORINTHIANS HOJE
+===================================================== */
+
+.current{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.98)
+    ),
+    url("images/torcida.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+}
+
+.current-box{
+    max-width:1200px;
+
+    margin:60px auto 0;
+
+    border:1px solid #292929;
+
+    background:rgba(8,8,8,.95);
+}
+
+.current-top{
+    padding:35px;
+
+    border-bottom:1px solid #292929;
+}
+
+.current-top h3{
+    font-size:32px;
+}
+
+.current-top p{
+    color:#666;
+
+    margin-top:8px;
+}
+
+.current-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+}
+
+.current-position{
+    padding:45px;
+
+    border-right:1px solid #292929;
+}
+
+.current-label{
+    color:#777;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+}
+
+.position{
+    font-size:90px;
+
+    line-height:.9;
+
+    font-weight:1000;
+
+    margin:15px 0;
+}
+
+.current-position p{
+    color:#aaa;
+
+    line-height:1.7;
+}
+
+.current-news{
+    padding:45px;
+}
+
+.news{
+    padding:18px 0;
+
+    border-bottom:1px solid #222;
+}
+
+.news:last-child{
+    border-bottom:0;
+}
+
+.news strong{
+    display:block;
+
+    font-size:16px;
+}
+
+.news span{
+    display:block;
+
+    color:#777;
+
+    font-size:13px;
+
+    margin-top:6px;
+}
+
+
+/* =====================================================
+   FIEL
+===================================================== */
+
+.fiel{
+    padding:140px 20px;
+
+    text-align:center;
+
+    background:#030303;
+
+    border-top:1px solid #181818;
+}
+
+.fiel h2{
+    font-size:clamp(40px,7vw,85px);
+
+    font-weight:1000;
+
+    line-height:.9;
+}
+
+.fiel p{
+    color:#666;
+
+    margin-top:25px;
+
+    letter-spacing:5px;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#020202;
+
+    border-top:1px solid #222;
+
+    text-align:center;
+
+    padding:55px 20px;
+}
+
+.footer-crest{
+    width:65px;
+
+    margin:0 auto 18px;
+}
+
+footer h3{
+    font-size:18px;
+
+    font-weight:1000;
+}
+
+footer p{
+    color:#555;
+
+    margin-top:10px;
+
+    font-size:12px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    header{
+        height:68px;
+        padding:0 18px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .brand img{
+        width:42px;
+    }
+
+    .hero-content{
+        margin-left:25px;
+        margin-right:25px;
+    }
+
+    .hero-crest{
+        width:80px;
+    }
+
+    .hero h1{
+        font-size:58px;
+
+        letter-spacing:-3px;
+    }
+
+    section{
+        padding:85px 20px;
+    }
+
+    .history-intro{
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .history-photo{
+        height:300px;
+    }
+
+    .moment-grid{
+        grid-template-columns:1fr;
+    }
+
+    .moment,
+    .moment.big{
+        height:390px;
+    }
+
+    .world-grid{
+        grid-template-columns:1fr;
+    }
+
+    .world-card{
+        min-height:500px;
+    }
+
+    .current-grid{
+        grid-template-columns:1fr;
+    }
+
+    .current-position{
+        border-right:0;
+
+        border-bottom:1px solid #292929;
+    }
+
+    .liberta-content{
+        padding:45px 30px;
+    }
+
+    .liberta-year{
+        font-size:70px;
+    }
+
+    .liberta-content h3{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- FAIXA DO UNIFORME -->
+
+<div class="stripes"></div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="brand">
+
+        <img src="images/escudo.png">
+
+        <div class="brand-name">
+
+            CORINTHIANS
+
+            <small>
+                SPORT CLUB CORINTHIANS PAULISTA
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#historia">HISTÓRIA</a>
+
+        <a href="#momentos">MOMENTOS</a>
+
+        <a href="#mundiais">MUNDIAIS</a>
+
+        <a href="#atual">TIMÃO HOJE</a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-bg"></div>
+
+    <div class="hero-stripes"></div>
+
+
+    <div class="hero-content">
+
+        <img
+            src="images/escudo.png"
+            class="hero-crest"
+        >
+
+        <div class="hero-kicker">
+            DESDE 1910
+        </div>
+
+        <h1>
+
+            CORINTHIANS
+
+            <br>
+
+            <span>É FIEL.</span>
+
+        </h1>
+
+        <p>
+
+            Uma história construída por jogadores,
+            títulos, sofrimento, conquistas e por
+            uma torcida que nunca abandona.
+
+        </p>
+
+        <a
+            href="#historia"
+            class="hero-button"
+        >
+            ENTRAR NA HISTÓRIA ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- HISTÓRIA -->
+
+<section
+    class="history"
+    id="historia"
+>
+
+    <div class="section-label">
+        01 / HISTÓRIA
+    </div>
+
+    <h2 class="section-title">
+
+        UMA HISTÓRIA
+
+        <span>ALÉM DO FUTEBOL.</span>
+
+    </h2>
+
+
+    <div class="history-intro">
+
+        <div class="history-text">
+
+            <p>
+
+                Em 1º de setembro de 1910,
+                cinco trabalhadores fundaram
+                o Sport Club Corinthians Paulista
+                no Bom Retiro.
+
+            </p>
+
+            <p>
+
+                O que começou como um clube de
+                bairro se transformou em uma das
+                maiores instituições esportivas
+                do Brasil.
+
+            </p>
+
+            <p>
+
+                A história passou por títulos,
+                períodos difíceis, grandes ídolos
+                e noites que ficaram para sempre
+                na memória da Fiel.
+
+            </p>
+
+        </div>
+
+
+        <div class="history-photo">
+
+            <img src="images/1910.jpg">
+
+        </div>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                1910
+            </div>
+
+            <h3>
+                O nascimento do Timão
+            </h3>
+
+            <p>
+                Nasce o Sport Club Corinthians Paulista.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                1977
+            </div>
+
+            <h3>
+                O gol de Basílio
+            </h3>
+
+            <p>
+                O Corinthians encerra uma longa espera
+                por um título paulista.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                1990
+            </div>
+
+            <h3>
+                Primeiro Brasileirão
+            </h3>
+
+            <p>
+                O Timão conquista pela primeira vez
+                o Campeonato Brasileiro.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                2000
+            </div>
+
+            <h3>
+                Campeão do mundo
+            </h3>
+
+            <p>
+                O Corinthians conquista o primeiro
+                Mundial de Clubes da FIFA.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                2012
+            </div>
+
+            <h3>
+                América e mundo
+            </h3>
+
+            <p>
+                Libertadores invicta e segundo Mundial.
+            </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+                2017
+            </div>
+
+            <h3>
+                O sétimo Brasileiro
+            </h3>
+
+            <p>
+                O Corinthians conquista mais um
+                Campeonato Brasileiro.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOMENTOS -->
+
+<section
+    class="moments"
+    id="momentos"
+>
+
+    <div class="section-label">
+        02 / MEMÓRIA
+    </div>
+
+    <h2 class="section-title">
+
+        MOMENTOS
+
+        <span>IMORTAIS.</span>
+
+    </h2>
+
+
+    <div class="moment-grid">
+
+
+        <!-- 1977 -->
+
+        <article class="moment">
+
+            <img src="images/1977.jpg">
+
+            <div class="moment-info">
+
+                <div class="moment-year">
+                    1977
+                </div>
+
+                <h3>
+                    BASÍLIO
+                </h3>
+
+                <p>
+                    O gol que encerrou uma espera
+                    que marcou gerações.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- 2000 -->
+
+        <article class="moment">
+
+            <img src="images/mundial-2000.jpg">
+
+            <div class="moment-info">
+
+                <div class="moment-year">
+                    2000
+                </div>
+
+                <h3>
+                    PRIMEIRO MUNDIAL
+                </h3>
+
+                <p>
+                    O Corinthians conquista o mundo
+                    no Maracanã.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- LIBERTADORES -->
+
+        <article class="moment big">
+
+            <img src="images/libertadores-2012.jpg">
+
+            <div class="moment-info">
+
+                <div class="moment-year">
+                    2012
+                </div>
+
+                <h3>
+                    LIBERTADORES
+                </h3>
+
+                <p>
+                    O primeiro título continental
+                    da história do Corinthians,
+                    conquistado de forma invicta.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- MUNDIAL 2012 -->
+
+        <article class="moment big">
+
+            <img src="images/mundial-2012.jpg">
+
+            <div class="moment-info">
+
+                <div class="moment-year">
+                    2012
+                </div>
+
+                <h3>
+            
